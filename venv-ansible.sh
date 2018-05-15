@@ -30,6 +30,7 @@ else
   mkproject $VENV_NAME
 
   if [[ $? -ne 0 ]]; then
+    echo "The mkproject command exited with non-zero response code."
     exit 1
   else
     echo "installing ansible"
