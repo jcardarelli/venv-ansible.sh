@@ -1,5 +1,8 @@
 #!/bin/bash
-source ./vars.sh
+ANSIBLE_DIR=/opt/ansible
+APT_PREREQS=(python python-pip virtualenvwrapper)
+VENV_NAME=ansible
+VENV_DIR=$HOME/.virtualenvs/$VENV_NAME
 
 if [[ -d $ANSIBLE_DIR ]]; then
   echo "$ANSIBLE_DIR directory exists"
