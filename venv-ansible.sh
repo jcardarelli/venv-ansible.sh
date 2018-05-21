@@ -31,14 +31,14 @@ else
     exit 1
   else
 
-    if [[ -d ${VENV_DIR}/${VENV_NAME} ]]; then
-      echo "source ${VENV_DIR}/${VENV_NAME}/bin/activate"
-      source ${VENV_DIR}/${VENV_NAME}/bin/activate
+    if [[ -d ${VENV_DIR} ]]; then
+      echo "source ${VENV_DIR}/bin/activate"
+      source ${VENV_DIR}/bin/activate
 
       echo "installing ansible"
       pip install ansible
     else
-      echo "${VENV_DIR}/${VENV_NAME} not found."
+      echo "${VENV_DIR} not found."
       exit 1
     fi
   fi
