@@ -30,11 +30,17 @@ else
     echo "The virtualenv command exited with non-zero response code."
     exit 1
   else
-    echo "source ${VENV_DIR}/${VENV_NAME}/bin/activate"
-    source ${VENV_DIR}/${VENV_NAME}/bin/activate
 
-    echo "installing ansible"
-    pip install ansible
+    if [[ -d ${VENV_DIR}/${VENV_NAME} ]]; then
+      echo "source ${VENV_DIR}/${VENV_NAME}/bin/activate"
+      source ${VENV_DIR}/${VENV_NAME}/bin/activate
+
+      echo "installing ansible"
+      pip install ansible
+    else
+      echo "${VENV_DIR}/${VENV_NAME} not found."
+      exit 1
+    fi
   fi
 
 
