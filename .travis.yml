@@ -3,6 +3,9 @@ env:
   - REPONAME=venv-ansible
 ignore:
   - *.md
+addons:
+  apt:
+    update: true
 
 services:
   - docker
