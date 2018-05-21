@@ -1,7 +1,21 @@
 language: bash
 
+services:
+  - docker
+
 before_script:
   - git clone https://github.com/kward/shunit2.git
+
+before_install:
+  - docker build --tag jcardarelli/venv-ansible .
+  - docker run -d jcardarelli/venv-ansible
+  - docker ps -a
+
+after_install:
+  - docker rm jcardarelli/venv-ansible
+  - docker rmi jcardarelli/venv-ansible
+  - docker ps -a
+  - docker images -a
 
 script:
   - bash tests/equality.sh
