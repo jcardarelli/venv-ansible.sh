@@ -24,7 +24,7 @@ else
   PROJECT_HOME=$HOME/.virtualenvs
 
   echo "Creating virtualenv $VENV_NAME (${VENV_DIR}) with virtualenv"
-  virtualenv $VENV_NAME
+  virtualenv "${VENV_DIR}/$VENV_NAME"
 
   if [[ $? -ne 0 ]]; then
     echo "The virtualenv command exited with non-zero response code."
