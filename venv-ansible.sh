@@ -12,7 +12,7 @@ else
 fi
 
 echo "Running apt-get update"
-sudo apt-get update
+sudo apt-get -qq update
 
 echo "Installing ${APT_PREREQS[@]} packages with apt-get"
 sudo apt-get install ${APT_PREREQS[@]} -y
