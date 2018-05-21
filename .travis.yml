@@ -1,4 +1,6 @@
 language: bash
+env:
+  - REPONAME=venv-ansible
 
 services:
   - docker
@@ -7,12 +9,12 @@ before_script:
   - git clone https://github.com/kward/shunit2.git
 
 before_install:
-  - docker build --tag jcardarelli/venv-ansible .
-  - docker run --rm jcardarelli/venv-ansible /bin/bash -c "source /root/.virtualenvs/ansible/bin/activate && ansible --version"
+  - docker build --tag $REPONAME .
+  - docker run --rm $REPONAME /bin/bash -c "source /root/.virtualenvs/ansible/bin/activate && ansible --version"
 
 after_install:
-  - docker rm jcardarelli/venv-ansible
-  - docker rmi jcardarelli/venv-ansible
+  - docker rm $REPONAME
+  - docker rmi $REPONAME
 
 script:
   - bash tests/equality.sh
