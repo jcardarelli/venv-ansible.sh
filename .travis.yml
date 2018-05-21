@@ -1,6 +1,8 @@
 language: bash
 env:
   - REPONAME=venv-ansible
+ignore:
+  - *.md
 
 services:
   - docker
