@@ -8,14 +8,11 @@ before_script:
 
 before_install:
   - docker build --tag jcardarelli/venv-ansible .
-  - docker run -d jcardarelli/venv-ansible
-  - docker ps -a
+  - docker run --rm jcardarelli/venv-ansible /bin/bash -c "source /root/.virtualenvs/ansible/bin/activate && ansible --version"
 
 after_install:
   - docker rm jcardarelli/venv-ansible
   - docker rmi jcardarelli/venv-ansible
-  - docker ps -a
-  - docker images -a
 
 script:
   - bash tests/equality.sh
