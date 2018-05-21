@@ -1,6 +1,6 @@
 #!/bin/bash
 ANSIBLE_DIR="/opt/ansible"
-APT_PREREQS="(python-pip virtualenv)"
+APT_PREREQS=(python-pip virtualenv)
 VENV_NAME="ansible"
 VENV_DIR="$HOME/.virtualenvs/$VENV_NAME"
 
