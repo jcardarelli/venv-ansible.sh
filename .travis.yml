@@ -1,6 +1,6 @@
 language: bash
 env:
-  - REPONAME=venv-ansible
+  - REPONAME="venv-ansible"
 addons:
   apt:
     update: true
